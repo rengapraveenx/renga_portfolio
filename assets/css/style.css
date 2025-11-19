@@ -316,12 +316,12 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
+  max-height: 160px;
   overflow: hidden;
   transition: var(--transition-2);
 }
 
-.sidebar.active { max-height: 405px; }
+.sidebar.active { max-height: 450px; }
 
 .sidebar-info {
   position: relative;
@@ -1246,11 +1246,10 @@ main {
    */
 
   .sidebar {
-    max-height: 180px;
     margin-bottom: 30px;
   }
 
-  .sidebar.active { max-height: 584px; }
+  .sidebar.active { }
 
   .sidebar-info { gap: 25px; }
 
@@ -1803,4 +1802,83 @@ main {
 
   .timeline-text { max-width: 700px; }
 
+}
+
+/*-----------------------------------*
+  #CV DOWNLOAD BUTTON
+\*-----------------------------------*/
+/* CV DOWNLOAD BUTTON */
+.cv-download-btn {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition-1);
+  text-decoration: none;
+  flex-direction: row; /* Desktop default */
+  margin-top: 15px;
+  z-index: 1;
+}
+
+.cv-download-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--eerie-black-1);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.cv-download-btn:hover {
+  background: var(--bg-gradient-yellow-1);
+}
+
+.cv-download-btn:hover::before {
+  background: var(--bg-gradient-yellow-2);
+}
+
+.cv-download-btn i {
+  font-size: 1.3em;
+}
+
+/* Medium screens */
+@media (max-width: 768px) {
+  .cv-download-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+}
+
+/* Small screens → STACK ICON TOP, TEXT BOTTOM */
+@media (max-width: 580px) {
+  .cv-download-btn {
+    flex-direction: row;    /* Stack vertically */
+    width: 100%;
+    gap: 6px;
+    padding: 14px;
+  }
+  
+  .cv-download-btn i {
+    font-size: 1.5em;
+  }
+}
+
+/* Ultra-small screens */
+@media (max-width: 360px) {
+  .cv-download-btn {
+    font-size: 13px;
+    padding: 12px;
+    gap: 4px;
+  }
 }
